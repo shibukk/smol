@@ -1,7 +1,7 @@
 <header>
-	{{ strings.Repeat ( .Site.Title | len | add 6 ) "=" }}<br>
-	== <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a> ==<br>
-	{{ strings.Repeat ( .Site.Title | len | add 6 ) "=" }}
+	{{ .Site.Params.titleSeparator | default "=" | strings.Repeat ( .Site.Title | len | add 6 ) }}<br>
+	{{ .Site.Params.titleSeparator | default "=" | strings.Repeat 2 }} <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a> {{ .Site.Params.titleSeparator | default "=" | strings.Repeat 2 }}<br>
+	{{ .Site.Params.titleSeparator | default "=" | strings.Repeat ( .Site.Title | len | add 6 ) }}<br>
 	<div style="float: right;">{{ .Site.Params.subtitle }}</div><br>
 	<p>
 	<nav>
